@@ -1,0 +1,35 @@
+revenue=[30000,11000,40000,55000,12000,2300,134594,14569,10650,64780,90000,12000]
+expense=[12000,1965,4665,9000,24678,8647,9537,3686,5885,9899,1344,9765,6689,25780]
+
+profit=[]
+
+for i in range(0,len(revenue)):
+    profit.append(revenue[i]-expense[i])
+    
+print(profit)
+
+tax = [round(i*0.3) for i in profit]
+print(tax)
+
+profit_after_tax=[]
+for i in range(0,len(profit)):
+    profit_after_tax.append(profit[i]-tax[i])
+print(profit_after_tax)   
+
+profit_margin=[]
+
+for i in range(0,len(profit)):
+    profit_margin.append(profit_after_tax[i]/profit[i])
+    
+print(profit_margin)
+
+mean_profit_after_tax=sum(profit_after_tax)/len(profit_after_tax)
+print(mean_profit_after_tax)
+
+for i in range(0,len(profit_margin)):
+    if profit[i]>mean_profit_after_tax:
+        print('Good Month')
+       
+    else:
+        print('Bad Month')
+            
